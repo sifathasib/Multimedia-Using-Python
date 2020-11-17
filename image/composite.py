@@ -6,7 +6,7 @@ im2 = Image.open('assets\\bridge.png').resize(size)
 mask = Image.new("L",size,0)
 draw = ImageDraw.Draw(mask)
 draw.ellipse((100,100,(512-100),(512-100)),fill= 255)
-
+mask = mask.filter(ImageFilter.GaussianBlur(10))
 mask.show()
 im = Image.composite(im1,im2,mask)
 im.show()
