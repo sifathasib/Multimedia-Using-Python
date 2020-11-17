@@ -64,7 +64,15 @@ class watermark:
             print('text going out of bounds')
         
     def addWaterMark(self):
-        pass  
+        using_composite =False   
+        if self.watermark is None:
+            return  
+        self.watermark = self.addTransparency(self.watermark)
+        pos_x, pos_y = self._getMarkPosition(self.mainImage,self.watermark)  
+        if not_using_composite:
+            self.mainImage.paste(self.watermark,(pos_x,pos_y),self.watermark)
+        else: 
+            
     def addTransparency(self,img):
         pass 
     def createImageObj(self):
